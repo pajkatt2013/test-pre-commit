@@ -1,0 +1,9 @@
+repos:
+  - repo: local  # 本地仓库
+    hooks:
+      - id: check-aws-arn
+        name: AWS ARN检测
+        entry: python /terry_modules/check_aws_arn.py  # 指定脚本入口
+        language: python
+        files: ^modules/.*\.py$  # 仅检查modules目录下的.py文件
+        pass_filenames: true     # 向脚本传递文件名参数 

@@ -1,0 +1,131 @@
+{
+  "apiVersion": "karpenter.sh/v1",
+  "kind": "NodePool",
+  "metadata": {
+    "annotations": {
+      "karpenter.sh/nodepool-hash": "10578001682806685078",
+      "karpenter.sh/nodepool-hash-version": "v3",
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"karpenter.sh/v1\",\"kind\":\"NodePool\",\"metadata\":{\"annotations\":{\"kubernetes.io/description\":\"RaaS RPU NodePool for CPU customer function enabled workloads\",\"meta.helm.sh/release-name\":\"karpenter\",\"meta.helm.sh/release-namespace\":\"kube-system\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"Helm\"},\"name\":\"raas-rpu\",\"namespace\":\"\"},\"spec\":{\"disruption\":{\"budgets\":[{\"nodes\":\"0%\",\"reasons\":[\"Drifted\",\"Underutilized\"]},{\"nodes\":\"100%\",\"reasons\":[\"Empty\"]}],\"consolidateAfter\":\"10m\",\"consolidationPolicy\":\"WhenEmpty\"},\"template\":{\"metadata\":{\"labels\":{\"customer_function\":\"common\",\"orionadp.com/node-target\":\"raas_rpu\",\"provisioned-by\":\"karpenter\"}},\"spec\":{\"expireAfter\":\"720h\",\"nodeClassRef\":{\"group\":\"karpenter.k8s.aws\",\"kind\":\"EC2NodeClass\",\"name\":\"common-cpu\"},\"requirements\":[{\"key\":\"kubernetes.io/arch\",\"operator\":\"In\",\"values\":[\"amd64\"]},{\"key\":\"kubernetes.io/os\",\"operator\":\"In\",\"values\":[\"linux\"]},{\"key\":\"karpenter.sh/capacity-type\",\"operator\":\"In\",\"values\":[\"on-demand\"]},{\"key\":\"node.kubernetes.io/instance-type\",\"operator\":\"In\",\"values\":[\"m7i.8xlarge\",\"m6i.8xlarge\",\"m5.8xlarge\"]}],\"taints\":[{\"effect\":\"NoSchedule\",\"key\":\"orionadp.com/node-target\",\"value\":\"raas_rpu\"}]}}}}\n",
+      "kubernetes.io/description": "RaaS RPU NodePool for CPU customer function enabled workloads",
+      "meta.helm.sh/release-name": "karpenter",
+      "meta.helm.sh/release-namespace": "kube-system"
+    },
+    "creationTimestamp": "2025-01-30T11:35:14Z",
+    "generation": 1,
+    "labels": {
+      "app.kubernetes.io/managed-by": "Helm"
+    },
+    "name": "raas-rpu",
+    "resourceVersion": "1153560326",
+    "uid": "1b22b44b-cb00-4562-a36a-f6449983e019"
+  },
+  "spec": {
+    "disruption": {
+      "budgets": [
+        {
+          "nodes": "0%",
+          "reasons": [
+            "Drifted",
+            "Underutilized"
+          ]
+        },
+        {
+          "nodes": "100%",
+          "reasons": [
+            "Empty"
+          ]
+        }
+      ],
+      "consolidateAfter": "10m",
+      "consolidationPolicy": "WhenEmpty"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "customer_function": "common",
+          "orionadp.com/node-target": "raas_rpu",
+          "provisioned-by": "karpenter"
+        }
+      },
+      "spec": {
+        "expireAfter": "720h",
+        "nodeClassRef": {
+          "group": "karpenter.k8s.aws",
+          "kind": "EC2NodeClass",
+          "name": "common-cpu"
+        },
+        "requirements": [
+          {
+            "key": "kubernetes.io/arch",
+            "operator": "In",
+            "values": [
+              "amd64"
+            ]
+          },
+          {
+            "key": "kubernetes.io/os",
+            "operator": "In",
+            "values": [
+              "linux"
+            ]
+          },
+          {
+            "key": "karpenter.sh/capacity-type",
+            "operator": "In",
+            "values": [
+              "on-demand"
+            ]
+          },
+          {
+            "key": "node.kubernetes.io/instance-type",
+            "operator": "In",
+            "values": [
+              "m7i.8xlarge",
+              "m6i.8xlarge",
+              "m5.8xlarge"
+            ]
+          }
+        ],
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "orionadp.com/node-target",
+            "value": "raas_rpu"
+          }
+        ]
+      }
+    }
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2025-01-30T11:35:14Z",
+        "message": "",
+        "reason": "NodeClassReady",
+        "status": "True",
+        "type": "NodeClassReady"
+      },
+      {
+        "lastTransitionTime": "2025-01-30T11:35:14Z",
+        "message": "",
+        "reason": "Ready",
+        "status": "True",
+        "type": "Ready"
+      },
+      {
+        "lastTransitionTime": "2025-01-30T11:35:14Z",
+        "message": "",
+        "reason": "ValidationSucceeded",
+        "status": "True",
+        "type": "ValidationSucceeded"
+      }
+    ],
+    "resources": {
+      "cpu": "0",
+      "ephemeral-storage": "0",
+      "memory": "0",
+      "nodes": "0",
+      "pods": "0"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+export balabala
+
+sudo -i
+aws eks update-kubeconfig --region cn-north-1 --name addf-realm-infra-dev-core-eks-cluster
+
+
