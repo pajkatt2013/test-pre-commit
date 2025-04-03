@@ -5,3 +5,8 @@ arn:awsser:sdff
 arn:terry
 
 arn:aws:123321
+
+
+arn:aws:
+
+test,arn:aws:
