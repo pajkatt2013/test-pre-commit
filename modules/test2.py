@@ -4,7 +4,7 @@
 
 # arn:aws:testtext
 
-# arn:aws-cn:1234
+arn:aws-cn:1234 # arn:aws:
 
 arest
 # arn:aws:testtext

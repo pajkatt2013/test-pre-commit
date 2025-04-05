@@ -12,7 +12,10 @@ def check_aws_arn(file_path):
             stripped = line.strip()
             if not stripped or stripped.startswith("#"):
                 continue  # 忽略空行和注释行
-            if pattern.search(line):
+
+            # 忽略行内注释内容
+            code_part = line.split("#")[0]
+            if pattern.search(code_part):
                 errors.append(f"please avoid hard coded ARN strings here : {file_path} line {i}")
 
     return errors
